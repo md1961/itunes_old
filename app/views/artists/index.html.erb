@@ -1,12 +1,14 @@
 <table class="table_base">
   <thead>
     <tr>
+      <th>#</th>
       <th>Name</th>
     </tr>
   </thead>
   <tbody>
-    <% @artists.each do |artist| -%>
+    <% @artists.each_with_index do |artist, index| -%>
       <tr>
+        <td style="text-align: right"><%= link_to index + 1, artist_path(artist) %></td>
         <td><%= artist.name %></td>
       </tr>
     <% end -%>

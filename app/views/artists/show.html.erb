@@ -1,0 +1,18 @@
+<%= @artist %>
+
+<table class="table_base">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @artist.albums.each_with_index do |album, index| -%>
+      <tr>
+        <td style="text-align: right"><%= link_to index + 1, album_path(album) %></td>
+        <td><%= album.name %></td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
