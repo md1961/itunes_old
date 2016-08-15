@@ -1,0 +1,36 @@
+<h1><%%= t(".page_title") % {model_name: <%= singular_table_name.camelize %>.model_name.human} %></h1>
+
+<p id="notice"><%%= notice %></p>
+
+<%% if @<%= plural_table_name %>.empty? %>
+  <h3><%%= t(".no_record_exists") % {model_name: <%= singular_table_name.camelize %>.model_name.human} %></h3>
+<%% else %>
+  <table class="table_base">
+    <thead>
+      <tr>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+        <th><%%= <%= singular_table_name.camelize %>.human_attribute_name(:<%= attribute.name %>) %></th>
+<% end -%>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+        <tr>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+          <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+<% end -%>
+          <td><%%= link_to t("link.show"), <%= singular_table_name %> %></td>
+          <td><%%= link_to t("link.edit"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+          <td><%%= link_to t("link.destroy"), <%= singular_table_name %>, method: :delete,
+                     data: { confirm: t("confirm.<%= singular_table_name %>.destroy") % {<%= singular_table_name %>: <%= singular_table_name %>} } %></td>
+        </tr>
+      <%% end %>
+    </tbody>
+  </table>
+<%% end %>
+
+<br>
+
+<%%= link_to t("link.new"), new_<%= singular_table_name %>_path %>

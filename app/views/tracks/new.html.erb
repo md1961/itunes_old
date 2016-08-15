@@ -1,0 +1,5 @@
+<h1><%= t(".page_title") % {model_name: Track.model_name.human} %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t("link.cancel"), tracks_path %>

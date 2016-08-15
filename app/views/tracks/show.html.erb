@@ -1,0 +1,87 @@
+<h1><%= t(".page_title") % {model_name: Track.model_name.human} %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<table class="table_base">
+  <tr>
+    <th><%= Track.human_attribute_name(:track_id) %></th>
+    <td><%= @track.track_id %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:name) %></th>
+    <td><%= @track.name %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:artist) %></th>
+    <td><%= @track.artist %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:composer) %></th>
+    <td><%= @track.composer %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:album) %></th>
+    <td><%= @track.album %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:genre) %></th>
+    <td><%= @track.genre %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:kind) %></th>
+    <td><%= @track.kind %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:size) %></th>
+    <td><%= @track.size %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:total_time) %></th>
+    <td><%= @track.total_time %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:disc_number) %></th>
+    <td><%= @track.disc_number %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:disc_count) %></th>
+    <td><%= @track.disc_count %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:track_number) %></th>
+    <td><%= @track.track_number %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:track_count) %></th>
+    <td><%= @track.track_count %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:year) %></th>
+    <td><%= @track.year %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:bpm) %></th>
+    <td><%= @track.bpm %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:date_modified) %></th>
+    <td><%= @track.date_modified %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:date_added) %></th>
+    <td><%= @track.date_added %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:bit_rate) %></th>
+    <td><%= @track.bit_rate %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:sample_rate) %></th>
+    <td><%= @track.sample_rate %></td>
+  </tr>
+</table>
+
+<br>
+
+<%= link_to t("link.edit"), edit_track_path(@track) %> |
+<%= link_to t("link.back"), tracks_path %>

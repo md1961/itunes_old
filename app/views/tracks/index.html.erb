@@ -1,0 +1,68 @@
+<h1><%= t(".page_title") % {model_name: Track.model_name.human} %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<% if @tracks.empty? %>
+  <h3><%= t(".no_record_exists") % {model_name: Track.model_name.human} %></h3>
+<% else %>
+  <table class="table_base">
+    <thead>
+      <tr>
+        <th><%= Track.human_attribute_name(:track_id) %></th>
+        <th><%= Track.human_attribute_name(:name) %></th>
+        <th><%= Track.human_attribute_name(:artist) %></th>
+        <th><%= Track.human_attribute_name(:composer) %></th>
+        <th><%= Track.human_attribute_name(:album) %></th>
+        <th><%= Track.human_attribute_name(:genre) %></th>
+        <th><%= Track.human_attribute_name(:kind) %></th>
+        <th><%= Track.human_attribute_name(:size) %></th>
+        <th><%= Track.human_attribute_name(:total_time) %></th>
+        <th><%= Track.human_attribute_name(:disc_number) %></th>
+        <th><%= Track.human_attribute_name(:disc_count) %></th>
+        <th><%= Track.human_attribute_name(:track_number) %></th>
+        <th><%= Track.human_attribute_name(:track_count) %></th>
+        <th><%= Track.human_attribute_name(:year) %></th>
+        <th><%= Track.human_attribute_name(:bpm) %></th>
+        <th><%= Track.human_attribute_name(:date_modified) %></th>
+        <th><%= Track.human_attribute_name(:date_added) %></th>
+        <th><%= Track.human_attribute_name(:bit_rate) %></th>
+        <th><%= Track.human_attribute_name(:sample_rate) %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tracks.each do |track| %>
+        <tr>
+          <td><%= track.track_id %></td>
+          <td><%= track.name %></td>
+          <td><%= track.artist %></td>
+          <td><%= track.composer %></td>
+          <td><%= track.album %></td>
+          <td><%= track.genre %></td>
+          <td><%= track.kind %></td>
+          <td><%= track.size %></td>
+          <td><%= track.total_time %></td>
+          <td><%= track.disc_number %></td>
+          <td><%= track.disc_count %></td>
+          <td><%= track.track_number %></td>
+          <td><%= track.track_count %></td>
+          <td><%= track.year %></td>
+          <td><%= track.bpm %></td>
+          <td><%= track.date_modified %></td>
+          <td><%= track.date_added %></td>
+          <td><%= track.bit_rate %></td>
+          <td><%= track.sample_rate %></td>
+          <td><%= link_to t("link.show"), track %></td>
+          <td><%= link_to t("link.edit"), edit_track_path(track) %></td>
+          <td><%= link_to t("link.destroy"), track, method: :delete,
+                     data: { confirm: t("confirm.track.destroy") % {track: track} } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br>
+
+<%= link_to t("link.new"), new_track_path %>
