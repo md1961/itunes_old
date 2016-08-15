@@ -1,0 +1,14 @@
+<table class="table_base">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @artists.each do |artist| -%>
+      <tr>
+        <td><%= artist.name %></td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
