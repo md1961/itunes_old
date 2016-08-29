@@ -3,6 +3,7 @@
   border: 2px black solid;
   border-collapse: collapse;
   border-spacing: 0;
+  margin: 2px;
 }
 
 .table_base th {
@@ -11,13 +12,9 @@
   background-color: #7F7F7F;
   padding: 0px 4px 0px;
   border: 1px black solid;
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 .table_base td {
   padding: 0px 4px 0px;
   border: 1px black solid;
-  border-collapse: collapse;
-  border-spacing: 0;
 }
