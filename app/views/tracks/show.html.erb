@@ -16,6 +16,10 @@
     <td><%= @track.artist %></td>
   </tr>
   <tr>
+    <th><%= Track.human_attribute_name(:album_artist) %></th>
+    <td><%= @track.album_artist %></td>
+  </tr>
+  <tr>
     <th><%= Track.human_attribute_name(:composer) %></th>
     <td><%= @track.composer %></td>
   </tr>
@@ -38,6 +42,10 @@
   <tr>
     <th><%= Track.human_attribute_name(:total_time) %></th>
     <td><%= @track.total_time %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:start_time) %></th>
+    <td><%= @track.start_time %></td>
   </tr>
   <tr>
     <th><%= Track.human_attribute_name(:disc_number) %></th>
@@ -78,6 +86,138 @@
   <tr>
     <th><%= Track.human_attribute_name(:sample_rate) %></th>
     <td><%= @track.sample_rate %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:comments) %></th>
+    <td><%= @track.comments %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:volume_adjustment) %></th>
+    <td><%= @track.volume_adjustment %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:play_count) %></th>
+    <td><%= @track.play_count %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:play_date) %></th>
+    <td><%= @track.play_date %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:play_date_utc) %></th>
+    <td><%= @track.play_date_utc %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:skip_count) %></th>
+    <td><%= @track.skip_count %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:skip_date) %></th>
+    <td><%= @track.skip_date %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:release_date) %></th>
+    <td><%= @track.release_date %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:rating) %></th>
+    <td><%= @track.rating %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:album_rating) %></th>
+    <td><%= @track.album_rating %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:album_rating_computed) %></th>
+    <td><%= @track.album_rating_computed %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:normalization) %></th>
+    <td><%= @track.normalization %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:sort_album_artist) %></th>
+    <td><%= @track.sort_album_artist %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:compilation) %></th>
+    <td><%= @track.compilation %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:artwork_count) %></th>
+    <td><%= @track.artwork_count %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:sort_artist) %></th>
+    <td><%= @track.sort_artist %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:sort_composer) %></th>
+    <td><%= @track.sort_composer %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:sort_album) %></th>
+    <td><%= @track.sort_album %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:sort_name) %></th>
+    <td><%= @track.sort_name %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:persistent_id) %></th>
+    <td><%= @track.persistent_id %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:disabled) %></th>
+    <td><%= @track.disabled %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:track_type) %></th>
+    <td><%= @track.track_type %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:protected) %></th>
+    <td><%= @track.protected %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:purchased) %></th>
+    <td><%= @track.purchased %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:has_video) %></th>
+    <td><%= @track.has_video %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:hd) %></th>
+    <td><%= @track.hd %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:video_width) %></th>
+    <td><%= @track.video_width %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:video_height) %></th>
+    <td><%= @track.video_height %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:music_video) %></th>
+    <td><%= @track.music_video %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:file_type) %></th>
+    <td><%= @track.file_type %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:location) %></th>
+    <td><%= @track.location %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:file_folder_count) %></th>
+    <td><%= @track.file_folder_count %></td>
+  </tr>
+  <tr>
+    <th><%= Track.human_attribute_name(:library_folder_count) %></th>
+    <td><%= @track.library_folder_count %></td>
   </tr>
 </table>
 

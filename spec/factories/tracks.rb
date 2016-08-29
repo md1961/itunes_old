@@ -5,21 +5,56 @@ FactoryGirl.define do
     track_id 1
     name "MyString"
     artist "MyString"
+    album_artist "MyString"
     composer "MyString"
     album "MyString"
     genre "MyString"
     kind "MyString"
     size 1
     total_time 1
+    start_time 1
     disc_number 1
     disc_count 1
     track_number 1
     track_count 1
     year 1
     bpm 1
-    date_modified "2016-08-15"
-    date_added "2016-08-15"
+    date_modified "2016-08-30"
+    date_added "2016-08-30"
     bit_rate 1
     sample_rate 1
+    comments "MyString"
+    volume_adjustment 1
+    play_count 1
+    play_date 1
+    play_date_utc "2016-08-30"
+    skip_count 1
+    skip_date "2016-08-30"
+    release_date "2016-08-30"
+    rating 1
+    album_rating 1
+    album_rating_computed false
+    normalization 1
+    sort_album_artist "MyString"
+    compilation false
+    artwork_count 1
+    sort_artist "MyString"
+    sort_composer "MyString"
+    sort_album "MyString"
+    sort_name "MyString"
+    persistent_id "MyString"
+    disabled false
+    track_type "MyString"
+    protected false
+    purchased false
+    has_video false
+    hd false
+    video_width 1
+    video_height 1
+    music_video false
+    file_type 1
+    location "MyString"
+    file_folder_count 1
+    library_folder_count 1
   end
 end
