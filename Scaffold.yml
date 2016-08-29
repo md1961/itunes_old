@@ -1,0 +1,72 @@
+---
+
+# Arguments for 'rails generate scaffold' command
+:model: Track
+:attrs:
+- track_id:integer
+- name:string
+- artist:string
+- album_artist:string
+- composer:string
+- album:string
+- genre:string
+- kind:string
+- size:integer
+- total_time:integer
+- start_time:integer
+- disc_number:integer
+- disc_count:integer
+- track_number:integer
+- track_count:integer
+- year:integer
+- bpm:integer
+- date_modified:date
+- date_added:date
+- bit_rate:integer
+- sample_rate:integer
+- comments:string
+- volume_adjustment:integer
+- play_count:integer
+- play_date:integer
+- play_date_utc:date
+- skip_count:integer
+- skip_date:date
+- release_date:date
+- rating:integer
+- album_rating:integer
+- album_rating_computed:boolean
+- normalization:integer
+- sort_album_artist:string
+- compilation:boolean
+- artwork_count:integer
+- sort_artist:string
+- sort_composer:string
+- sort_album:string
+- sort_name:string
+- persistent_id:string
+- disabled:boolean
+- track_type:string
+- protected:boolean
+- purchased:boolean
+- has_video:boolean
+- hd:boolean
+- video_width:integer
+- video_height:integer
+- music_video:boolean
+- file_type:integer
+- location:string
+- file_folder_count:integer
+- library_folder_count:integer
+
+# Locale translations in config/locales/ja.yml
+:t_model:
+:t_attrs:
+
+# Used for validates() arguments of the model as they are.
+:validates:
+
+# (to_s() of the model is used for confirmation message before destroy.)
+:attr_for_to_s:
+
+# Used for db/seeds.rb
+:data:
