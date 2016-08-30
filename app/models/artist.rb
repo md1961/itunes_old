@@ -1,6 +1,7 @@
 class Artist
   include ActiveModel::Conversion
   include ActiveModel::Naming
+  include Comparable
 
   attr_reader :id, :name
 
@@ -37,6 +38,14 @@ class Artist
 
   def ==(other)
     name == other.name
+  end
+
+  def name_when_compared
+    name.sub(/\AThe /, '')
+  end
+
+  def <=>(other)
+    name_when_compared <=> other.name_when_compared
   end
 
   def persisted?
