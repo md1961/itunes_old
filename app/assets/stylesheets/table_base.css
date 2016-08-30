@@ -12,11 +12,13 @@
   background-color: #7F7F7F;
   padding: 0px 4px 0px;
   border: 1px black solid;
+  line-height: 13px;
 }
 
 .table_base td {
   padding: 0px 4px 0px;
   border: 1px black solid;
+  line-height: 13px;
 }
 
 td.numeric {
