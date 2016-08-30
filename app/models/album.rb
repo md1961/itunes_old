@@ -24,14 +24,22 @@ class Album
   end
 
   def self.find_by(options)
-    raise ArgumentError unless options.has_key?(:name)
-    all.find { |album| album.name == options[:name] }
+    find_first_or_all(:first, options)
   end
 
   def self.where(options)
-    raise ArgumentError unless options.has_key?(:artist)
-    all.select { |album| album.artist == options[:artist] }
+    find_first_or_all(:all, options)
   end
+
+    def self.find_first_or_all(first_or_all, options)
+      raise ArgumentError if (options.symbolize_keys.keys - [:name, :artist]).size > 0
+      all.send(first_or_all == :first ? :find : :select) { |album|
+        options.symbolize_keys.all? { |name, value|
+          album.send(name) == value
+        }
+      }
+    end
+    private_class_method :find_first_or_all
 
   def tracks
     Track.where(album: name)
