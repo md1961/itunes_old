@@ -40,12 +40,14 @@ ja:
         track_id: TrackId
         name: Name
         artist: Artist
+        album_artist: AlbumArtist
         composer: Composer
         album: Album
         genre: Genre
         kind: Kind
         size: Size
         total_time: TotalTime
+        start_time: StartTime
         disc_number: DiscNumber
         disc_count: DiscCount
         track_number: TrackNumber
@@ -56,6 +58,39 @@ ja:
         date_added: DateAdded
         bit_rate: BitRate
         sample_rate: SampleRate
+        comments: Comments
+        volume_adjustment: VolumeAdjustment
+        play_count: PlayCount
+        play_date: PlayDate
+        play_date_utc: PlayDateUtc
+        skip_count: SkipCount
+        skip_date: SkipDate
+        release_date: ReleaseDate
+        rating: Rating
+        album_rating: AlbumRating
+        album_rating_computed: AlbumRatingComputed
+        normalization: Normalization
+        sort_album_artist: SortAlbumArtist
+        compilation: Compilation
+        artwork_count: ArtworkCount
+        sort_artist: SortArtist
+        sort_composer: SortComposer
+        sort_album: SortAlbum
+        sort_name: SortName
+        persistent_id: PersistentId
+        disabled: Disabled
+        track_type: TrackType
+        protected: Protected
+        purchased: Purchased
+        has_video: HasVideo
+        hd: Hd
+        video_width: VideoWidth
+        video_height: VideoHeight
+        music_video: MusicVideo
+        file_type: FileType
+        location: Location
+        file_folder_count: FileFolderCount
+        library_folder_count: LibraryFolderCount
   date:
     abbr_day_names:
     - "日"

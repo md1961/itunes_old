@@ -11,12 +11,14 @@
         <th><%= Track.human_attribute_name(:track_id) %></th>
         <th><%= Track.human_attribute_name(:name) %></th>
         <th><%= Track.human_attribute_name(:artist) %></th>
+        <th><%= Track.human_attribute_name(:album_artist) %></th>
         <th><%= Track.human_attribute_name(:composer) %></th>
         <th><%= Track.human_attribute_name(:album) %></th>
         <th><%= Track.human_attribute_name(:genre) %></th>
         <th><%= Track.human_attribute_name(:kind) %></th>
         <th><%= Track.human_attribute_name(:size) %></th>
         <th><%= Track.human_attribute_name(:total_time) %></th>
+        <th><%= Track.human_attribute_name(:start_time) %></th>
         <th><%= Track.human_attribute_name(:disc_number) %></th>
         <th><%= Track.human_attribute_name(:disc_count) %></th>
         <th><%= Track.human_attribute_name(:track_number) %></th>
@@ -27,6 +29,39 @@
         <th><%= Track.human_attribute_name(:date_added) %></th>
         <th><%= Track.human_attribute_name(:bit_rate) %></th>
         <th><%= Track.human_attribute_name(:sample_rate) %></th>
+        <th><%= Track.human_attribute_name(:comments) %></th>
+        <th><%= Track.human_attribute_name(:volume_adjustment) %></th>
+        <th><%= Track.human_attribute_name(:play_count) %></th>
+        <th><%= Track.human_attribute_name(:play_date) %></th>
+        <th><%= Track.human_attribute_name(:play_date_utc) %></th>
+        <th><%= Track.human_attribute_name(:skip_count) %></th>
+        <th><%= Track.human_attribute_name(:skip_date) %></th>
+        <th><%= Track.human_attribute_name(:release_date) %></th>
+        <th><%= Track.human_attribute_name(:rating) %></th>
+        <th><%= Track.human_attribute_name(:album_rating) %></th>
+        <th><%= Track.human_attribute_name(:album_rating_computed) %></th>
+        <th><%= Track.human_attribute_name(:normalization) %></th>
+        <th><%= Track.human_attribute_name(:sort_album_artist) %></th>
+        <th><%= Track.human_attribute_name(:compilation) %></th>
+        <th><%= Track.human_attribute_name(:artwork_count) %></th>
+        <th><%= Track.human_attribute_name(:sort_artist) %></th>
+        <th><%= Track.human_attribute_name(:sort_composer) %></th>
+        <th><%= Track.human_attribute_name(:sort_album) %></th>
+        <th><%= Track.human_attribute_name(:sort_name) %></th>
+        <th><%= Track.human_attribute_name(:persistent_id) %></th>
+        <th><%= Track.human_attribute_name(:disabled) %></th>
+        <th><%= Track.human_attribute_name(:track_type) %></th>
+        <th><%= Track.human_attribute_name(:protected) %></th>
+        <th><%= Track.human_attribute_name(:purchased) %></th>
+        <th><%= Track.human_attribute_name(:has_video) %></th>
+        <th><%= Track.human_attribute_name(:hd) %></th>
+        <th><%= Track.human_attribute_name(:video_width) %></th>
+        <th><%= Track.human_attribute_name(:video_height) %></th>
+        <th><%= Track.human_attribute_name(:music_video) %></th>
+        <th><%= Track.human_attribute_name(:file_type) %></th>
+        <th><%= Track.human_attribute_name(:location) %></th>
+        <th><%= Track.human_attribute_name(:file_folder_count) %></th>
+        <th><%= Track.human_attribute_name(:library_folder_count) %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -34,25 +69,60 @@
     <tbody>
       <% @tracks.each do |track| %>
         <tr>
-          <td><%= track.track_id %></td>
+          <td class="numeric"><%= track.track_id %></td>
           <td><%= track.name %></td>
           <td><%= track.artist %></td>
+          <td><%= track.album_artist %></td>
           <td><%= track.composer %></td>
           <td><%= track.album %></td>
           <td><%= track.genre %></td>
           <td><%= track.kind %></td>
-          <td><%= track.size %></td>
-          <td><%= track.total_time %></td>
-          <td><%= track.disc_number %></td>
-          <td><%= track.disc_count %></td>
-          <td><%= track.track_number %></td>
-          <td><%= track.track_count %></td>
-          <td><%= track.year %></td>
-          <td><%= track.bpm %></td>
+          <td class="numeric"><%= track.size %></td>
+          <td class="numeric"><%= track.total_time %></td>
+          <td class="numeric"><%= track.start_time %></td>
+          <td class="numeric"><%= track.disc_number %></td>
+          <td class="numeric"><%= track.disc_count %></td>
+          <td class="numeric"><%= track.track_number %></td>
+          <td class="numeric"><%= track.track_count %></td>
+          <td class="numeric"><%= track.year %></td>
+          <td class="numeric"><%= track.bpm %></td>
           <td><%= track.date_modified %></td>
           <td><%= track.date_added %></td>
-          <td><%= track.bit_rate %></td>
-          <td><%= track.sample_rate %></td>
+          <td class="numeric"><%= track.bit_rate %></td>
+          <td class="numeric"><%= track.sample_rate %></td>
+          <td><%= track.comments %></td>
+          <td class="numeric"><%= track.volume_adjustment %></td>
+          <td class="numeric"><%= track.play_count %></td>
+          <td class="numeric"><%= track.play_date %></td>
+          <td><%= track.play_date_utc %></td>
+          <td class="numeric"><%= track.skip_count %></td>
+          <td><%= track.skip_date %></td>
+          <td><%= track.release_date %></td>
+          <td class="numeric"><%= track.rating %></td>
+          <td class="numeric"><%= track.album_rating %></td>
+          <td><%= track.album_rating_computed %></td>
+          <td class="numeric"><%= track.normalization %></td>
+          <td><%= track.sort_album_artist %></td>
+          <td><%= track.compilation %></td>
+          <td class="numeric"><%= track.artwork_count %></td>
+          <td><%= track.sort_artist %></td>
+          <td><%= track.sort_composer %></td>
+          <td><%= track.sort_album %></td>
+          <td><%= track.sort_name %></td>
+          <td><%= track.persistent_id %></td>
+          <td><%= track.disabled %></td>
+          <td><%= track.track_type %></td>
+          <td><%= track.protected %></td>
+          <td><%= track.purchased %></td>
+          <td><%= track.has_video %></td>
+          <td><%= track.hd %></td>
+          <td class="numeric"><%= track.video_width %></td>
+          <td class="numeric"><%= track.video_height %></td>
+          <td><%= track.music_video %></td>
+          <td class="numeric"><%= track.file_type %></td>
+          <td><%= track.location %></td>
+          <td class="numeric"><%= track.file_folder_count %></td>
+          <td class="numeric"><%= track.library_folder_count %></td>
           <td><%= link_to t("link.show"), track %></td>
           <td><%= link_to t("link.edit"), edit_track_path(track) %></td>
           <td><%= link_to t("link.destroy"), track, method: :delete,
