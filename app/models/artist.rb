@@ -2,6 +2,7 @@ class Artist
   include ActiveModel::Conversion
   include ActiveModel::Naming
   include Comparable
+  extend ActiveRecordLikeFinders
 
   attr_reader :id, :name
 
@@ -17,15 +18,6 @@ class Artist
 
   def self.all
     @all_instances ||= Track.pluck(:artist).uniq.map { |name| new(name) }
-  end
-
-  def self.find(id)
-    all.find { |artist| artist.id == id.to_i }
-  end
-
-  def self.find_by(options)
-    raise ArgumentError unless options.has_key?(:name)
-    all.find { |artist| artist.name == options[:name] }
   end
 
   def albums
