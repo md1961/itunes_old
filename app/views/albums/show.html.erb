@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>Name</th>
+      <th>Track Name</th>
+      <th>Time</th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +14,12 @@
         <td style="text-align: right">
           <%= link_to track.track_number, track_path(track) %>
         </td>
-        <td><%= track.name %></td>
+        <td>
+          <%= track.name %>
+        </td>
+        <td class="numeric">
+          <%= str_time_in_min_and_sec(track.total_time) %>
+        </td>
       </tr>
     <% end -%>
   </tbody>
