@@ -45,6 +45,10 @@ class Album
     Track.where(album: name).order(:track_number)
   end
 
+  def year
+    tracks.first.year
+  end
+
   def to_s
     name
   end
