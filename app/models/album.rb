@@ -24,6 +24,10 @@ class Album
     Track.where(album: name).order(:track_number)
   end
 
+  def total_time_in_sec
+    tracks.map(&:total_time_in_sec).inject(&:+)
+  end
+
   def year
     tracks.first.year
   end
