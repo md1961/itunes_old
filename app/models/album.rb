@@ -42,7 +42,7 @@ class Album
     private_class_method :find_first_or_all
 
   def tracks
-    Track.where(album: name)
+    Track.where(album: name).order(:track_number)
   end
 
   def to_s
