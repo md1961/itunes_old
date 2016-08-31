@@ -18,7 +18,7 @@
           <%= track.name %>
         </td>
         <td class="numeric">
-          <%= str_time_in_min_and_sec(track.total_time) %>
+          <%= str_time_in_min_and_sec(track.total_time_in_sec.round) %>
         </td>
       </tr>
     <% end -%>
