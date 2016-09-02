@@ -1,10 +1,13 @@
-<%= "#{@album} (by #{@album.artist})" %>
+<%= "#{@album}#{@album.compilation? ? '' : " (by #{@album.artist})"}" %>
 
 <table class="table_base">
   <thead>
     <tr>
       <th>#</th>
       <th>Track Name</th>
+      <% if @album.compilation? -%>
+        <th>Artist Name</th>
+      <% end -%>
       <th>Time</th>
     </tr>
   </thead>
@@ -17,6 +20,11 @@
         <td>
           <%= track.name %>
         </td>
+        <% if @album.compilation? -%>
+          <td>
+            <%= track.artist %>
+          </td>
+        <% end -%>
         <td class="numeric">
           <%= str_time_in_min_and_sec(track.total_time_in_sec.round) %>
         </td>
