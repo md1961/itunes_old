@@ -17,7 +17,7 @@ class Artist
     private_class_method :new
 
   def self.all
-    @all_instances ||= Track.pluck(:artist).uniq.map { |name| new(name) }
+    @all_instances ||= Track.where(compilation: false).pluck(:artist).uniq.map { |name| new(name) }
   end
 
   def albums
