@@ -16,12 +16,14 @@ class Artist
     end
     private_class_method :new
 
+  COMPILATION = new('(compilation)')
+
   def self.all
-    @all_instances ||= Track.where(compilation: false).pluck(:artist).uniq.map { |name| new(name) }
+    @all_instances ||= [COMPILATION] + Track.where(compilation: false).pluck(:artist).uniq.map { |name| new(name) }
   end
 
   def albums
-    @albums ||= Album.where(artist: self)
+    @albums ||= self == COMPILATION ? Album.where(compilation?: true) : Album.where(artist: self)
   end
 
   def to_s
