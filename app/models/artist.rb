@@ -26,6 +26,12 @@ class Artist
     @albums ||= self == COMPILATION ? Album.where(compilation?: true) : Album.where(artist: self)
   end
 
+  def self.filter(condition)
+    return all if condition.blank?
+    artist_condition = condition.split.map { |x| x =~ /\A[a-z_]/ ? "artist.#{x}" : x }.join(' ')
+    all.select { |artist| eval(artist_condition) }
+  end
+
   def to_s
     name
   end

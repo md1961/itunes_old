@@ -1,3 +1,9 @@
+<%= form_tag artists_path, method: :get do %>
+  <%= label_tag 'Filtering Condition' %>
+  <%= text_field_tag :condition, @condition, size: 40 %>
+  <%= submit_tag :Filter %>
+<% end -%>
+
 <table class="table_base">
   <thead>
     <tr>

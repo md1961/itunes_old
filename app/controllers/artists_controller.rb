@@ -1,7 +1,8 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artists = Artist.all.sort
+    @condition = params[:condition]
+    @artists = Artist.filter(@condition).sort
   end
 
   def show
