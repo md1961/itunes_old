@@ -7,4 +7,8 @@ class Track < ActiveRecord::Base
   def to_s
     name
   end
+
+  def readonly?
+    true
+  end
 end
