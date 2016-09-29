@@ -59,3 +59,18 @@ group :test do
   gem 'launchy', '~> 2.4.2'
   gem 'selenium-webdriver', '~> 2.43.0'
 end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'awesome_print', require: 'ap'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+end
