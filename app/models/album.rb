@@ -22,8 +22,8 @@ class Album
   end
 
     def self.make_all_instances
-        Track.where(compilation: false).pluck(:album, :artist).uniq.map { |name, artist_name| new(name, artist_name) } \
-      + Track.where(compilation: true ).pluck(:album         ).uniq.map { |name             | new(name, nil, true  ) }
+        Track.where(compilation: false).map { |t| [t.album, t.artist] }.uniq.map { |name, artist_name| new(name, artist_name) } \
+      + Track.where(compilation: true ).map(&:album                   ).uniq.map { |name             | new(name, nil, true  ) }
     end
     private_class_method :make_all_instances
 
@@ -32,7 +32,7 @@ class Album
   end
 
   def tracks
-    Track.where(album: name).order(:track_number)
+    Track.where(album: name).sort_by(&:track_number)
   end
 
   def total_time_in_sec

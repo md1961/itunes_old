@@ -19,7 +19,7 @@ class Artist
   COMPILATION = new('(compilation)')
 
   def self.all
-    @all_instances ||= [COMPILATION] + Track.where(compilation: false).pluck(:artist).uniq.map { |name| new(name) }
+    @all_instances ||= [COMPILATION] + Track.where(compilation: false).map(&:artist).uniq.map { |name| new(name) }
   end
 
   def albums
